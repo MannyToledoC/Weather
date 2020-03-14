@@ -7,12 +7,15 @@ import java.net.URL;
 import java.net.URLConnection;
 
 public class ApiCalling {
-	String APIKey = "31c61d21d28c0dd5f1bfdb4a80d4bfec";
-	String Location = "Miami, Florida";
-	String APIUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + Location + "&appid=" + APIKey + "&units=metric";
+	private String APIKey = "31c61d21d28c0dd5f1bfdb4a80d4bfec";
+	// String Location = "Miami, Florida";
 	
-	public String buildData() throws IOException{
+	public String buildData(String location) throws IOException{
+		//TODO: make sure location is a valid one.
+		
 		String data;
+		String APIUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + APIKey + "&units=metric";
+		
 		StringBuilder output = new StringBuilder();
 		URL url = new URL(APIUrl);
 		URLConnection connection = url.openConnection();

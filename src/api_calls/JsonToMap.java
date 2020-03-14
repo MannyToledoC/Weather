@@ -3,7 +3,6 @@ package api_calls;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import java.lang.reflect.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,7 +15,7 @@ public class JsonToMap {
 		return son;
 	}
 	
-	public static void printMap(Map s) {
+	public static void printMap(Map<String, Object> s) {
 		s.forEach((key, value) -> System.out.println(key + ":" + value));
 	}
 	

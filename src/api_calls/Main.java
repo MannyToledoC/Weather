@@ -9,7 +9,7 @@ public class Main {
 		// TODO Auto-generated method stub
 		ApiCalling abc = new ApiCalling();
 		
-		JsonToMap.toMap(abc.buildData());
+		JsonToMap.toMap(abc.buildData(new String("Miami, Florida")));
 	
 	}
 
