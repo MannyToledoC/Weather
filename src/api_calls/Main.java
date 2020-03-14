@@ -8,7 +8,8 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		ApiCalling abc = new ApiCalling();
-		abc.buildData();
+		
+		JsonToMap.toMap(abc.buildData());
 	
 	}
 

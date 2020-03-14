@@ -21,7 +21,7 @@ public class ApiCalling {
 		while((data = read.readLine()) != null) {
 			output.append(data);
 		}
-		System.out.println(output.toString());
+		// System.out.println(output.toString());
 		return output.toString();
 	}
 }
