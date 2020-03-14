@@ -11,7 +11,7 @@ public class ApiCalling {
 	String Location = "Miami, Florida";
 	String APIUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + Location + "&appid=" + APIKey + "&units=metric";
 	
-	public StringBuilder buildData() throws IOException{
+	public String buildData() throws IOException{
 		String data;
 		StringBuilder output = new StringBuilder();
 		URL url = new URL(APIUrl);
@@ -21,7 +21,7 @@ public class ApiCalling {
 		while((data = read.readLine()) != null) {
 			output.append(data);
 		}
-		System.out.println(output);
-		return output;
+		System.out.println(output.toString());
+		return output.toString();
 	}
 }
