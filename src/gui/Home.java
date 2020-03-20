@@ -38,4 +38,5 @@ public class Home extends JPanel {
 		g.drawImage(img.getImage(), 0, 0, this.getWidth(), this.getHeight(), null);
 	}
 	
+	
 }

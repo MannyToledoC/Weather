@@ -11,6 +11,7 @@ public class ApiCalling {
 	// String Location = "Miami, Florida";
 	
 	public static String buildData(String location) {
+		
 		//TODO: make sure location is a valid one.
 		
 		String data;
