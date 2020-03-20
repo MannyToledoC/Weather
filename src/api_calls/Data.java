@@ -13,10 +13,11 @@ public class Data{
 	private static Map<String, Object> mainMap 		= JsonToMap.toMap(dataMap.get("main").toString());
 
 	
-
-	
 	public static String getTemp() {
-		return mainMap.get("temp").toString();
+		String temp = mainMap.get("temp").toString();
+		double t = Double.parseDouble(temp);
+		String truncated = String.valueOf((int) t);
+		return truncated;
 	}
 	
 	public static String getHumidity() {

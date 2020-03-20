@@ -9,6 +9,7 @@ import javax.swing.border.EmptyBorder;
 
 import gui.Home;
 import java.awt.Color;
+import java.awt.CardLayout;
 
 public class Frame extends JFrame {
 	
@@ -25,6 +26,8 @@ public class Frame extends JFrame {
 			public void run() {
 				try {
 					Frame frame = new Frame();
+					
+					
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -38,16 +41,18 @@ public class Frame extends JFrame {
 	 */
 	public Frame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(600, 600, 375, 667);
+		setResizable(false);
 		contentPane = new JPanel();
-		contentPane.setBackground(Color.BLACK);
+		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		renderHome();
 	}
 	
 	public void renderHome() {
+		contentPane.setLayout(null);
+		home.setBounds(0, 0, 375, 667);
 		contentPane.add(home);
 	}
 

@@ -1,11 +1,13 @@
 package gui;
 
 import javax.swing.JPanel;
-
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 import api_calls.Data;
 import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
 public class Home extends JPanel {
 
 	/**
@@ -17,38 +19,23 @@ public class Home extends JPanel {
 		
 		JLabel locationLabel = new JLabel(Data.getLocation());
 		locationLabel.setForeground(Color.WHITE);
-		locationLabel.setBounds(180, 11, 135, 39);
+		locationLabel.setBounds(157, 11, 135, 39);
 		add(locationLabel);
 		
-		JLabel tempLabel = new JLabel(Data.getTemp());
+		JLabel tempLabel = new JLabel(Data.getTemp() + " F");
+		tempLabel.setFont(new Font("Tahoma", Font.PLAIN, 50));
 		tempLabel.setForeground(Color.WHITE);
-		tempLabel.setBounds(93, 57, 79, 14);
+		tempLabel.setBounds(46, 534, 146, 44);
 		add(tempLabel);
-		
-		JLabel minTempLabel = new JLabel(Data.getTempMin());
-		minTempLabel.setForeground(Color.WHITE);
-		minTempLabel.setBounds(93, 165, 79, 14);
-		add(minTempLabel);
-		
-		JLabel maxTempLabel = new JLabel(Data.getTempMax());
-		maxTempLabel.setForeground(Color.WHITE);
-		maxTempLabel.setBounds(93, 112, 79, 14);
-		add(maxTempLabel);
-		
-		JLabel tempLabelTag = new JLabel("Temperature");
-		tempLabelTag.setForeground(Color.WHITE);
-		tempLabelTag.setBounds(10, 57, 79, 14);
-		add(tempLabelTag);
-		
-		JLabel minTempLabelTag = new JLabel("Low");
-		minTempLabelTag.setForeground(Color.WHITE);
-		minTempLabelTag.setBounds(10, 165, 63, 14);
-		add(minTempLabelTag);
-		
-		JLabel maxTempLabelTag = new JLabel("High");
-		maxTempLabelTag.setForeground(Color.WHITE);
-		maxTempLabelTag.setBounds(10, 112, 73, 14);
-		add(maxTempLabelTag);
-		System.out.println(Data.getLocation());
+		System.out.println(getSize());
 	}
+	
+	@Override
+	protected void paintComponent(Graphics g) {
+		// TODO Auto-generated method stub
+		super.paintComponent(g);
+		ImageIcon img = new ImageIcon(this.getClass().getResource("After-Noon.png"));
+		g.drawImage(img.getImage(), 0, 0, this.getWidth(), this.getHeight(), null);
+	}
+	
 }
