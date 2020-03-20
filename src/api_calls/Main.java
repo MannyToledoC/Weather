@@ -7,10 +7,8 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		ApiCalling abc = new ApiCalling();
 		
-		JsonToMap.toMap(abc.buildData(new String("Miami, Florida")));
-	
+		Data.getLocation();
 	}
 
 }

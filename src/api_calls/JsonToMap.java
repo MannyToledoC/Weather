@@ -17,6 +17,10 @@ public class JsonToMap {
 	
 	public static void printMap(Map<String, Object> s) {
 		s.forEach((key, value) -> System.out.println(key + ":" + value));
+		System.out.println("\n");
+		
+	
+
 	}
 	
 }
