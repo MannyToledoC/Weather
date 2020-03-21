@@ -8,7 +8,7 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		
-		Data.getLocation();
+		System.out.println(LocationCalls.getApiJson());;
 	}
 
 }

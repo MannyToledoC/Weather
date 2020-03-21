@@ -1,5 +1,8 @@
 package api_calls;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
 import java.util.Map;
 
 import api_calls.JsonToMap;
@@ -7,7 +10,7 @@ import api_calls.ApiCalling;
 
 public class Data{
 	
-	private static String location = "Miami, Florida"; // TODO: get input from computer
+	private static String location = LocationCalls.getApiJson();
 
 	private static Map<String, Object> dataMap 		= JsonToMap.toMap(ApiCalling.buildData(location));
 	private static Map<String, Object> mainMap 		= JsonToMap.toMap(dataMap.get("main").toString());
@@ -34,6 +37,17 @@ public class Data{
 	
 	public static String getLocation() {
 		return location;
+	}
+	
+	public static String getTime() {
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
+		LocalDateTime now = LocalDateTime.now();
+		return dtf.format(now);
+	}
+
+	public static int getHour() {
+		LocalDateTime now = LocalDateTime.now();
+		return now.getHour();
 	}
 	
 	
